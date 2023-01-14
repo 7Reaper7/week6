@@ -10,7 +10,6 @@ void printPacMan(int,int);
 void printghost(int,int);
 void erase(int, int);
 void death(int, int);
-bool direct(int, char);
 char getCharAtxy(short int, short int);
 
 int score=0;
@@ -271,31 +270,6 @@ char getCharAtxy(short int x, short int y)
     coordBufSize.X = 1;
     coordBufSize.Y = 1;
     return ReadConsoleOutput(GetStdHandle(STD_OUTPUT_HANDLE), &ci, coordBufSize, xy, &rect) ? ci.Char.AsciiChar : ' ';
-}
-
-bool direct(int directionFlag, char nextSpot)
-{
-    if(GetAsyncKeyState(VK_RIGHT) && directionFlag != 1)
-    {
-        return false;
-    }
-    if(GetAsyncKeyState(VK_LEFT) && directionFlag != 2)
-    {
-        return false;
-    }
-    if(GetAsyncKeyState(VK_UP) && directionFlag != 3)
-    {
-        return false;
-    }
-    if(GetAsyncKeyState(VK_DOWN) && directionFlag != 4)
-    {
-        return false;
-    }
-    if(nextSpot == '#' || nextSpot == '|' || nextSpot == '%')
-    {
-        return false;
-    }
-    return true;
 }
 
 void death(int x, int y)
