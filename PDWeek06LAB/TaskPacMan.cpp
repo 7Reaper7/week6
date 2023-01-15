@@ -13,17 +13,15 @@ void death(int, int);
 char getCharAtxy(short int, short int);
 
 int score=0;
-bool loop;
 
 main()
 {
     system("Cls");
     int x=5, y=5, gx=2, gy=9, gx1=24, gy1=2;
-    int directionFlag;
     int d_flag = 1;
     int d1_flag = 1;
     char nextSpot;
-    bool run = true, move;
+    bool run = true;
     printMaze();
     printPacMan(x,y);
      
